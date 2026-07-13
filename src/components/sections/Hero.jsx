@@ -138,7 +138,7 @@ const Hero = () => {
 
             <motion.a
               href={personalInfo.resume}
-              download
+              download="Syed Abdul Qahar (CV).pdf"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="btn-secondary"

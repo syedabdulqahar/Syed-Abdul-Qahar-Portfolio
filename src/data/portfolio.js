@@ -2,13 +2,12 @@
 export const personalInfo = {
   name: "Syed Abdul Qahar",
   title: "Frontend Developer & AI Enthusiast",
-  tagline:
-    "Crafting intelligent, beautiful web experiences powered by AI",
+  tagline: "Crafting intelligent, beautiful web experiences powered by AI",
   description:
     "I'm a Frontend Developer passionate about building AI-powered applications. Currently pursuing Generative AI & Agentic AI, I combine modern web technologies with intelligent systems to create impactful digital experiences.",
   email: "syedabdulqahar2004@gmail.com",
   location: "Islamabad, Pakistan",
-  resume: "/resume.pdf",
+  resume: "/Syed Abdul Qahar (CV).pdf",
 };
 
 export const aboutData = {
@@ -85,8 +84,10 @@ export const projectsData = [
   {
     id: 1,
     title: "PAK LAW AI",
-    description: "An AI-powered legal assistance platform tailored for Pakistani law.",
-    longDescription: "A comprehensive full-stack application leveraging Artificial Intelligence to provide legal insights, document analysis, and guidance based on Pakistani law.",
+    description:
+      "An AI-powered legal assistance platform tailored for Pakistani law.",
+    longDescription:
+      "A comprehensive full-stack application leveraging Artificial Intelligence to provide legal insights, document analysis, and guidance based on Pakistani law.",
     image: "/projects/portfolio.jpg",
     category: "Full Stack AI Apps",
     technologies: ["React", "Node.js", "AI/LLMs"],
@@ -97,8 +98,10 @@ export const projectsData = [
   {
     id: 2,
     title: "Secure Company Portal",
-    description: "A secure resource portal for company employees and management.",
-    longDescription: "A full-stack enterprise solution providing a secure and efficient way for company staff to manage resources, documents, and internal communications.",
+    description:
+      "A secure resource portal for company employees and management.",
+    longDescription:
+      "A full-stack enterprise solution providing a secure and efficient way for company staff to manage resources, documents, and internal communications.",
     image: "/projects/portfolio.jpg",
     category: "Full Stack AI Apps",
     technologies: ["React", "Security", "Authentication"],
@@ -109,8 +112,10 @@ export const projectsData = [
   {
     id: 3,
     title: "Restaurant Website",
-    description: "An AI-enhanced modern restaurant platform for food ordering and display.",
-    longDescription: "A visually appealing frontend application for a restaurant, featuring an interactive menu, dynamic UI, and AI-driven recommendations.",
+    description:
+      "An AI-enhanced modern restaurant platform for food ordering and display.",
+    longDescription:
+      "A visually appealing frontend application for a restaurant, featuring an interactive menu, dynamic UI, and AI-driven recommendations.",
     image: "/projects/portfolio.jpg",
     category: "AI-Powered Frontend",
     technologies: ["React", "Tailwind CSS", "AI Integration"],
@@ -121,12 +126,18 @@ export const projectsData = [
   {
     id: 4,
     title: "Weather App",
-    description: "A dynamic weather forecasting application providing real-time data.",
-    longDescription: "A frontend web application that fetches and displays real-time weather data based on user location or searched cities, featuring a clean and intuitive interface.",
+    description:
+      "A dynamic weather forecasting application providing real-time data.",
+    longDescription:
+      "A frontend web application that fetches and displays real-time weather data based on user location or searched cities, featuring a clean and intuitive interface.",
     image: "/projects/portfolio.jpg",
     category: "AI-Powered Frontend",
     technologies: ["React", "API Integration", "CSS"],
-    features: ["Real-time weather data", "Location-based forecast", "Search functionality"],
+    features: [
+      "Real-time weather data",
+      "Location-based forecast",
+      "Search functionality",
+    ],
     link: "https://github.com/syedabdulqahar/WeatherApp",
     demo: "https://weather-app-eight-fawn-25.vercel.app",
   },
@@ -134,7 +145,8 @@ export const projectsData = [
     id: 5,
     title: "Instagram Clone",
     description: "A frontend clone of Instagram's web interface.",
-    longDescription: "A faithful recreation of the Instagram UI using React, demonstrating proficiency in complex layout design, component structure, and responsive styling.",
+    longDescription:
+      "A faithful recreation of the Instagram UI using React, demonstrating proficiency in complex layout design, component structure, and responsive styling.",
     image: "/projects/portfolio.jpg",
     category: "Frontend",
     technologies: ["React", "CSS", "UI/UX"],
@@ -146,7 +158,8 @@ export const projectsData = [
     id: 6,
     title: "YouTube Clone",
     description: "A frontend replica of the YouTube video streaming platform.",
-    longDescription: "A detailed frontend clone of YouTube, showcasing video grids, sidebar navigation, and search bar implementations.",
+    longDescription:
+      "A detailed frontend clone of YouTube, showcasing video grids, sidebar navigation, and search bar implementations.",
     image: "/projects/portfolio.jpg",
     category: "Frontend",
     technologies: ["React", "CSS", "Video UI"],
@@ -158,7 +171,8 @@ export const projectsData = [
     id: 7,
     title: "Rock Paper Scissors",
     description: "An interactive web-based Rock Paper Scissors game.",
-    longDescription: "A fun and interactive frontend game built with React, featuring state management for score tracking and game logic.",
+    longDescription:
+      "A fun and interactive frontend game built with React, featuring state management for score tracking and game logic.",
     image: "/projects/rps.png",
     category: "Games",
     technologies: ["React", "JavaScript", "CSS"],
@@ -169,12 +183,18 @@ export const projectsData = [
   {
     id: 8,
     title: "Portfolio Website",
-    description: "A modern, animated personal portfolio built with React, Framer Motion, and Tailwind CSS.",
-    longDescription: "Designed and developed a fully responsive portfolio website featuring smooth animations, glassmorphism design, dark mode aesthetics, and interactive sections.",
+    description:
+      "A modern, animated personal portfolio built with React, Framer Motion, and Tailwind CSS.",
+    longDescription:
+      "Designed and developed a fully responsive portfolio website featuring smooth animations, glassmorphism design, dark mode aesthetics, and interactive sections.",
     image: "/projects/portfolio.jpg",
     category: "Frontend",
     technologies: ["React", "Tailwind CSS", "Framer Motion"],
-    features: ["Smooth scroll animations", "Responsive glassmorphism design", "Interactive contact form"],
+    features: [
+      "Smooth scroll animations",
+      "Responsive glassmorphism design",
+      "Interactive contact form",
+    ],
     link: "https://www.github.com/syedabdulqahar",
     demo: "#",
   },
