@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { aboutData } from '../../data/portfolio';
-import dpImg from '../../assets/dp.png';
 import { fadeInUp, staggerContainer, staggerItem } from '../../utils/animations';
 
 const About = () => {
@@ -38,7 +37,13 @@ const About = () => {
 
                   {/* Circular avatar */}
                   <div className="relative rounded-full overflow-hidden w-56 h-56 md:w-72 md:h-72 shadow-2xl ring-1 ring-white/10 transition-transform hover:scale-105">
-                    <img src={dpImg} alt="Syed Abdul Qahar" loading="lazy" className="w-full h-full object-cover" />
+                    <img src="/projects/dp.png" alt="Syed Abdul Qahar" loading="lazy" className="w-full h-full object-cover" />
+                  </div>
+
+                  {/* Name / Role caption */}
+                  <div className="mt-4 text-center">
+                    <div className="text-white font-semibold text-lg">Syed Abdul Qahar</div>
+                    <div className="text-sm text-gray-400">Frontend Developer & AI Enthusiast</div>
                   </div>
                 </div>
               </div>
