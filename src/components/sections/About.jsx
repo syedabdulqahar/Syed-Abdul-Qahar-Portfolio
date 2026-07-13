@@ -30,8 +30,16 @@ const About = () => {
             className="relative"
           >
             <div className="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-cyan-400/20 to-purple-500/20 p-1">
-              <div className="w-full h-full bg-dark-800 rounded-xl flex items-center justify-center overflow-hidden">
-                <img src="/images/syed-profile.png" alt="Syed Abdul Qahar" className="w-full h-full object-cover" />
+              <div className="w-full h-full bg-gradient-to-br from-cyan-400/10 to-purple-500/10 rounded-2xl flex items-center justify-center overflow-visible">
+                <div className="relative">
+                  {/* Gradient halo */}
+                  <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-cyan-400/30 to-purple-500/30 blur-2xl transform rotate-6" aria-hidden="true" />
+
+                  {/* Circular avatar */}
+                  <div className="relative rounded-full overflow-hidden w-56 h-56 md:w-72 md:h-72 shadow-2xl ring-1 ring-white/10 transition-transform hover:scale-105">
+                    <img src="/images/syed-profile.png" alt="Syed Abdul Qahar" loading="lazy" className="w-full h-full object-cover" />
+                  </div>
+                </div>
               </div>
             </div>
 
