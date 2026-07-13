@@ -30,8 +30,8 @@ const About = () => {
             className="relative"
           >
             <div className="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-cyan-400/20 to-purple-500/20 p-1">
-              <div className="w-full h-full bg-dark-800 rounded-xl flex items-center justify-center">
-                <div className="text-6xl">👨‍💻</div>
+              <div className="w-full h-full bg-dark-800 rounded-xl flex items-center justify-center overflow-hidden">
+                <img src="/images/syed-profile.png" alt="Syed Abdul Qahar" className="w-full h-full object-cover" />
               </div>
             </div>
 
