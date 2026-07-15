@@ -52,12 +52,12 @@ export const Typewriter = ({
   ]);
 
   return (
-    <span className="text-cyan-400">
+    <span className="text-cyan-400 light:text-teal-700">
       {displayedText}
       <motion.span
         animate={{ opacity: [1, 0] }}
         transition={{ duration: 0.5, repeat: Infinity }}
-        className="ml-1 inline-block w-0.5 h-8 bg-cyan-400"
+        className="ml-1 inline-block w-0.5 h-8 bg-cyan-400 light:bg-teal-600"
       />
     </span>
   );

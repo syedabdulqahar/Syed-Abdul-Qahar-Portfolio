@@ -38,19 +38,17 @@ const iconMap = {
 
 const TechStack = () => {
   return (
-    <section id="tech-stack" className="py-20 md:py-28 relative">
+    <section id="tech-stack" className="section-wrap">
       <div className="container-custom">
         {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 text-center"
+          className="mb-16 md:mb-20 text-center"
         >
-          <span className="text-cyan-400 text-sm font-semibold uppercase tracking-widest">
-            Tools & Technologies
-          </span>
-          <h2 className="mt-4">Tech Stack</h2>
+          <span className="section-label">Tools & Technologies</span>
+          <h2 className="mt-5">Tech Stack</h2>
         </motion.div>
 
         {/* Tech Grid */}
@@ -59,7 +57,7 @@ const TechStack = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"
         >
           {techStackData.map((tech, index) => {
             const IconComponent = iconMap[tech.icon];
@@ -72,7 +70,7 @@ const TechStack = () => {
                   boxShadow: '0 0 30px rgba(6, 182, 212, 0.6)',
                   borderColor: 'rgba(6, 182, 212, 0.8)',
                 }}
-                className="group p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 cursor-default"
+                className="group relative p-6 rounded-2xl bg-white/5 light:bg-surface border border-white/10 light:border-zinc-200/80 light:shadow-soft hover:bg-white/10 light:hover:bg-muted transition-all duration-300 cursor-default"
               >
                 {/* Tech Icon */}
                 <div className="text-4xl mb-4 opacity-80 group-hover:opacity-100 transition-opacity">
@@ -84,12 +82,12 @@ const TechStack = () => {
                 </div>
 
                 {/* Tech Name */}
-                <h4 className="text-white font-semibold mb-1 group-hover:text-cyan-400 transition-colors">
+                <h4 className="theme-heading font-semibold mb-1 group-hover:text-cyan-400 light:group-hover:text-teal-700 transition-colors">
                   {tech.name}
                 </h4>
 
                 {/* Category */}
-                <p className="text-xs text-gray-500 group-hover:text-cyan-400/60 transition-colors">
+                <p className="text-xs text-gray-500 light:text-ink-muted group-hover:text-cyan-400/60 light:group-hover:text-teal-600/70 transition-colors">
                   {tech.category}
                 </p>
 
@@ -110,7 +108,7 @@ const TechStack = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="text-center text-gray-400 mt-12 text-sm max-w-2xl mx-auto"
+          className="text-center text-gray-400 light:text-ink-muted mt-14 text-sm max-w-2xl mx-auto leading-relaxed"
         >
           I'm constantly learning and integrating new technologies. This represents my core
           technical toolkit and the technologies I use most frequently in my projects.

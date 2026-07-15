@@ -11,7 +11,6 @@ export const useActiveSection = () => {
 
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
 
         if (window.scrollY >= sectionTop - 200) {
           current = section.getAttribute("id");
@@ -43,13 +42,15 @@ export const useInView = (ref, options = {}) => {
       { threshold: 0.1, ...options },
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const element = ref.current;
+
+    if (element) {
+      observer.observe(element);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (element) {
+        observer.unobserve(element);
       }
     };
   }, [ref, options]);

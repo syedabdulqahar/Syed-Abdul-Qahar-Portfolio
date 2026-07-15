@@ -17,7 +17,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-dark-900 text-gray-300 overflow-x-hidden">
+    <div className="theme-surface overflow-x-hidden">
       <Navbar />
 
       {/* Main Content */}

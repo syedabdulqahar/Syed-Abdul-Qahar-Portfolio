@@ -5,19 +5,17 @@ import { staggerContainer, staggerItem } from '../../utils/animations';
 
 const Education = () => {
   return (
-    <section id="education" className="py-20 md:py-28 relative">
+    <section id="education" className="section-wrap">
       <div className="container-custom">
         {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 text-center"
+          className="mb-16 md:mb-20 text-center"
         >
-          <span className="text-cyan-400 text-sm font-semibold uppercase tracking-widest">
-            Learning
-          </span>
-          <h2 className="mt-4">Education & Certifications</h2>
+          <span className="section-label">Learning</span>
+          <h2 className="mt-5">Education & Certifications</h2>
         </motion.div>
 
         {/* Education Section */}
@@ -26,7 +24,7 @@ const Education = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-2xl font-bold text-white mb-8 flex items-center gap-3"
+            className="text-2xl font-bold theme-heading mb-10 flex items-center gap-3"
           >
             <FaGraduationCap className="text-cyan-400" />
             Education
@@ -37,7 +35,7 @@ const Education = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-7"
           >
             {educationData.map((edu, index) => (
               <motion.div
@@ -59,15 +57,15 @@ const Education = () => {
                 </div>
 
                 {/* Content */}
-                <h4 className="text-white font-bold mb-2 group-hover:text-cyan-400 transition-colors line-clamp-2">
+                <h4 className="theme-heading font-bold mb-2 group-hover:text-cyan-400 light:group-hover:text-teal-700 transition-colors line-clamp-2">
                   {edu.degree}
                 </h4>
 
-                <p className="text-cyan-400 text-sm font-semibold mb-2">{edu.school}</p>
+                <p className="text-cyan-400 light:text-teal-700 text-sm font-semibold mb-2">{edu.school}</p>
 
                 <p className="text-gray-500 text-sm mb-3">{edu.year}</p>
 
-                <p className="text-gray-400 text-sm leading-relaxed">{edu.description}</p>
+                <p className="text-gray-400 light:text-ink-muted text-sm leading-relaxed">{edu.description}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -79,7 +77,7 @@ const Education = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-2xl font-bold text-white mb-8 flex items-center gap-3"
+            className="text-2xl font-bold theme-heading mb-10 flex items-center gap-3"
           >
             <span className="text-3xl">📜</span>
             Certifications
@@ -90,7 +88,7 @@ const Education = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-7"
           >
             {certificatesData.map((cert, index) => (
               <motion.a
@@ -115,18 +113,18 @@ const Education = () => {
                 </div>
 
                 {/* Content */}
-                <h4 className="text-white font-bold mb-2 group-hover:text-cyan-400 transition-colors pr-8">
+                <h4 className="theme-heading font-bold mb-2 group-hover:text-cyan-400 light:group-hover:text-teal-700 transition-colors pr-8">
                   {cert.title}
                 </h4>
 
-                <p className="text-cyan-400 text-sm font-semibold mb-2">{cert.issuer}</p>
+                <p className="text-cyan-400 light:text-teal-700 text-sm font-semibold mb-2">{cert.issuer}</p>
 
                 <p className="text-gray-500 text-sm mb-4">{cert.date}</p>
 
                 {/* Credential ID */}
-                <div className="pt-4 border-t border-white/10">
-                  <p className="text-xs text-gray-500 mb-3">Credential ID</p>
-                  <code className="text-xs text-cyan-400 font-mono bg-white/5 px-2 py-1 rounded block break-all">
+                <div className="pt-4 border-t border-white/10 light:border-zinc-200">
+                  <p className="text-xs text-gray-500 light:text-ink-muted mb-3">Credential ID</p>
+                  <code className="text-xs text-cyan-400 light:text-teal-700 font-mono bg-white/5 light:bg-muted px-2 py-1 rounded-lg block break-all">
                     {cert.credentialId}
                   </code>
                 </div>
@@ -135,7 +133,7 @@ const Education = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 5 }}
                   whileHover={{ opacity: 1, y: 0 }}
-                  className="mt-4 pt-4 border-t border-white/10 text-cyan-400 text-sm font-semibold flex items-center gap-2 hover:gap-3 transition-all"
+                  className="mt-4 pt-4 border-t border-white/10 light:border-zinc-200 text-cyan-400 light:text-teal-700 text-sm font-semibold flex items-center gap-2 hover:gap-3 transition-all"
                 >
                   View Certificate →
                 </motion.div>

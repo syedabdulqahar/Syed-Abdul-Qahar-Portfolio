@@ -52,26 +52,24 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 relative">
+    <section id="contact" className="section-wrap">
       <div className="container-custom">
         {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 text-center"
+          className="mb-16 md:mb-20 text-center"
         >
-          <span className="text-cyan-400 text-sm font-semibold uppercase tracking-widest">
-            Get In Touch
-          </span>
-          <h2 className="mt-4">Let's Work Together</h2>
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">
+          <span className="section-label">Get In Touch</span>
+          <h2 className="mt-5">Let's Work Together</h2>
+          <p className="text-gray-400 light:text-ink-muted mt-5 max-w-2xl mx-auto text-lg leading-relaxed">
             Have a project in mind or want to collaborate? I'd love to hear from you.
             Send me a message and I'll get back to you as soon as possible.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-14 md:gap-16 max-w-5xl mx-auto">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -85,12 +83,12 @@ const Contact = () => {
               whileHover={{ x: 10 }}
               className="flex items-start gap-4 group"
             >
-              <div className="w-14 h-14 rounded-lg bg-cyan-400/20 border border-cyan-400/50 flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-400/40 transition-colors">
-                <FaEnvelope className="text-cyan-400 text-xl" />
+              <div className="w-14 h-14 rounded-2xl bg-cyan-400/20 light:bg-pastel-sky border border-cyan-400/50 light:border-sky-200/70 flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-400/40 light:group-hover:bg-pastel-cyan transition-colors shadow-soft">
+                <FaEnvelope className="text-cyan-400 light:text-teal-700 text-xl" />
               </div>
               <div>
-                <h4 className="text-white font-semibold mb-1">Email</h4>
-                <p className="text-gray-400 group-hover:text-cyan-400 transition-colors">
+                <h4 className="theme-heading font-semibold mb-1">Email</h4>
+                <p className="text-gray-400 light:text-ink-muted group-hover:text-cyan-400 light:group-hover:text-teal-700 transition-colors">
                   {personalInfo.email}
                 </p>
               </div>
@@ -103,12 +101,12 @@ const Contact = () => {
               whileHover={{ x: 10 }}
               className="flex items-start gap-4 group"
             >
-              <div className="w-14 h-14 rounded-lg bg-cyan-400/20 border border-cyan-400/50 flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-400/40 transition-colors">
-                <FaMapMarkerAlt className="text-cyan-400 text-xl" />
+              <div className="w-14 h-14 rounded-2xl bg-cyan-400/20 light:bg-pastel-violet border border-cyan-400/50 light:border-violet-200/70 flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-400/40 light:group-hover:bg-pastel-violet transition-colors shadow-soft">
+                <FaMapMarkerAlt className="text-cyan-400 light:text-violet-700 text-xl" />
               </div>
               <div>
-                <h4 className="text-white font-semibold mb-1">Location</h4>
-                <p className="text-gray-400">{personalInfo.location}</p>
+                <h4 className="theme-heading font-semibold mb-1">Location</h4>
+                <p className="text-gray-400 light:text-ink-muted">{personalInfo.location}</p>
               </div>
             </motion.div>
 
@@ -118,13 +116,13 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="mt-12 pt-12 border-t border-white/10"
+              className="mt-12 pt-12 border-t border-white/10 light:border-zinc-200"
             >
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
                 <span className="text-green-400 text-sm font-semibold">Available for freelance</span>
               </div>
-              <p className="text-gray-400 text-sm">
+              <p className="text-gray-400 light:text-ink-muted text-sm leading-relaxed">
                 I'm currently open to new projects and opportunities. Let's connect!
               </p>
             </motion.div>
@@ -140,7 +138,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               {/* Name Field */}
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
+                <label htmlFor="name" className="block text-sm font-medium theme-heading mb-2">
                   Your Name
                 </label>
                 <input
@@ -148,7 +146,7 @@ const Contact = () => {
                   type="text"
                   placeholder="John Doe"
                   {...register('name')}
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
+                  className="w-full px-4 py-3 rounded-lg theme-input focus:outline-none focus:ring-1 transition-all"
                 />
                 {errors.name && (
                   <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>
@@ -157,7 +155,7 @@ const Contact = () => {
 
               {/* Email Field */}
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+                <label htmlFor="email" className="block text-sm font-medium theme-heading mb-2">
                   Email Address
                 </label>
                 <input
@@ -165,7 +163,7 @@ const Contact = () => {
                   type="email"
                   placeholder="you@example.com"
                   {...register('email')}
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
+                  className="w-full px-4 py-3 rounded-lg theme-input focus:outline-none focus:ring-1 transition-all"
                 />
                 {errors.email && (
                   <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>
@@ -174,7 +172,7 @@ const Contact = () => {
 
               {/* Subject Field */}
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-white mb-2">
+                <label htmlFor="subject" className="block text-sm font-medium theme-heading mb-2">
                   Subject
                 </label>
                 <input
@@ -182,7 +180,7 @@ const Contact = () => {
                   type="text"
                   placeholder="Project inquiry"
                   {...register('subject')}
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
+                  className="w-full px-4 py-3 rounded-lg theme-input focus:outline-none focus:ring-1 transition-all"
                 />
                 {errors.subject && (
                   <p className="text-red-400 text-sm mt-1">{errors.subject.message}</p>
@@ -191,7 +189,7 @@ const Contact = () => {
 
               {/* Message Field */}
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
+                <label htmlFor="message" className="block text-sm font-medium theme-heading mb-2">
                   Message
                 </label>
                 <textarea
@@ -199,7 +197,7 @@ const Contact = () => {
                   rows={5}
                   placeholder="Tell me about your project..."
                   {...register('message')}
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-lg theme-input focus:outline-none focus:ring-1 transition-all resize-none"
                 />
                 {errors.message && (
                   <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>

@@ -1,9 +1,31 @@
+import plugin from "tailwindcss/plugin";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  plugins: [
+    plugin(({ addVariant }) => {
+      addVariant("light", "html.light &");
+    }),
+  ],
   theme: {
     extend: {
       colors: {
+        offwhite: "#FAFAFA",
+        surface: "#FFFFFF",
+        muted: "#F4F4F5",
+        ink: {
+          DEFAULT: "#18181B",
+          soft: "#3F3F46",
+          muted: "#71717A",
+        },
+        pastel: {
+          cyan: "#CFFAFE",
+          sky: "#E0F2FE",
+          violet: "#EDE9FE",
+          mint: "#D1FAE5",
+          rose: "#FFE4E6",
+        },
         cyan: {
           50: "#ecf9fd",
           100: "#cef1f8",
@@ -39,6 +61,7 @@ export default {
       },
       fontFamily: {
         sans: [
+          "Inter",
           "Segoe UI",
           "Roboto",
           "Oxygen",
@@ -46,6 +69,10 @@ export default {
           "Cantarell",
           "sans-serif",
         ],
+      },
+      letterSpacing: {
+        elegant: "0.02em",
+        wide: "0.08em",
       },
       backdropBlur: {
         xs: "2px",
@@ -55,6 +82,10 @@ export default {
         "neon-lg": "0 0 20px rgba(6, 182, 212, 0.8)",
         "neon-blue": "0 0 10px rgba(0, 102, 255, 0.5)",
         "neon-purple": "0 0 10px rgba(168, 85, 247, 0.5)",
+        soft: "0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.04)",
+        card: "0 2px 8px rgba(0, 0, 0, 0.04), 0 12px 32px rgba(0, 0, 0, 0.05)",
+        elevated: "0 4px 20px rgba(0, 0, 0, 0.06), 0 8px 32px rgba(0, 0, 0, 0.04)",
+        navbar: "0 1px 3px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.03)",
       },
       animation: {
         float: "float 3s ease-in-out infinite",
@@ -74,5 +105,4 @@ export default {
       },
     },
   },
-  plugins: [],
 };

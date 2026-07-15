@@ -14,19 +14,17 @@ const Projects = () => {
       : projectsData.filter((p) => p.category === selectedCategory);
 
   return (
-    <section id="projects" className="py-20 md:py-28 relative">
+    <section id="projects" className="section-wrap">
       <div className="container-custom">
         {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 text-center"
+          className="mb-16 md:mb-20 text-center"
         >
-          <span className="text-cyan-400 text-sm font-semibold uppercase tracking-widest">
-            Portfolio
-          </span>
-          <h2 className="mt-4">Featured Projects</h2>
+          <span className="section-label">Portfolio</span>
+          <h2 className="mt-5">Featured Projects</h2>
         </motion.div>
 
         {/* Category Filter */}
@@ -34,7 +32,7 @@ const Projects = () => {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          className="flex flex-wrap justify-center gap-3 mb-14"
         >
           {categories.map((category) => (
             <motion.button
@@ -42,10 +40,10 @@ const Projects = () => {
               onClick={() => setSelectedCategory(category)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-6 py-2 rounded-lg font-medium transition-all ${
+              className={`px-6 py-2.5 rounded-full font-medium transition-all ${
                 selectedCategory === category
-                  ? 'bg-cyan-400/30 text-cyan-400 border border-cyan-400 shadow-neon'
-                  : 'bg-white/5 text-gray-400 border border-white/10 hover:border-cyan-400/50'
+                  ? 'bg-cyan-400/30 light:bg-ink text-cyan-400 light:text-white border border-cyan-400 light:border-ink shadow-neon light:shadow-soft'
+                  : 'bg-white/5 light:bg-surface text-gray-400 light:text-ink-muted border border-white/10 light:border-zinc-200 hover:border-cyan-400/50 light:hover:border-zinc-300 light:shadow-soft'
               }`}
             >
               {category}
@@ -59,10 +57,10 @@ const Projects = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-7"
         >
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, index) => (
+            {filteredProjects.map((project) => (
               <motion.div
                 key={project.id}
                 variants={staggerItem}
@@ -75,7 +73,7 @@ const Projects = () => {
                   className="card-glass card-hover overflow-hidden h-full flex flex-col"
                 >
                   {/* Project Image */}
-                  <div className="relative h-48 bg-dark-800 overflow-hidden mb-6">
+                  <div className="relative h-48 bg-dark-800 light:bg-muted overflow-hidden mb-6 rounded-xl">
                     {project.image ? (
                       <img 
                         src={project.image} 
@@ -88,7 +86,7 @@ const Projects = () => {
                       </div>
                     )}
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent"
+                      className="absolute inset-0 bg-gradient-to-t from-dark-900 light:from-offwhite/90 via-transparent to-transparent"
                       initial={{ opacity: 0 }}
                       whileHover={{ opacity: 1 }}
                       transition={{ duration: 0.3 }}
@@ -98,17 +96,17 @@ const Projects = () => {
                   {/* Content */}
                   <div className="flex-1 flex flex-col">
                     {/* Category Badge */}
-                    <span className="inline-block w-fit px-3 py-1 rounded-full bg-cyan-400/20 border border-cyan-400/30 text-cyan-400 text-xs font-medium mb-3">
+                    <span className="inline-block w-fit px-3 py-1 rounded-full bg-cyan-400/20 light:bg-pastel-sky border border-cyan-400/30 light:border-sky-200/70 text-cyan-400 light:text-teal-800 text-xs font-medium mb-3">
                       {project.category}
                     </span>
 
                     {/* Title */}
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                    <h3 className="text-lg font-bold theme-heading mb-2 group-hover:text-cyan-400 light:group-hover:text-teal-700 transition-colors">
                       {project.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-sm text-gray-400 mb-4 flex-1">
+                    <p className="text-sm text-gray-400 light:text-ink-muted mb-4 flex-1 leading-relaxed">
                       {project.description}
                     </p>
 
@@ -117,7 +115,7 @@ const Projects = () => {
                       {project.technologies.slice(0, 3).map((tech, i) => (
                         <span
                           key={i}
-                          className="px-2 py-1 rounded text-xs bg-white/5 text-gray-400 border border-white/10"
+                          className="px-2 py-1 rounded-full text-xs bg-white/5 light:bg-muted text-gray-400 light:text-ink-muted border border-white/10 light:border-zinc-200/80"
                         >
                           {tech}
                         </span>
@@ -138,7 +136,7 @@ const Projects = () => {
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-cyan-400/20 text-gray-400 hover:text-cyan-400 transition-all font-medium text-sm"
+                          className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-white/10 light:bg-muted hover:bg-cyan-400/20 light:hover:bg-zinc-200 text-gray-400 light:text-ink-muted hover:text-cyan-400 light:hover:text-ink transition-all font-medium text-sm"
                         >
                           <FaGithub size={16} /> Code
                         </motion.a>
@@ -150,7 +148,7 @@ const Projects = () => {
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-cyan-400/20 hover:bg-cyan-400/40 text-cyan-400 transition-all font-medium text-sm"
+                          className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-cyan-400/20 light:bg-ink hover:bg-cyan-400/40 light:hover:bg-zinc-800 text-cyan-400 light:text-white transition-all font-medium text-sm"
                         >
                           <FaExternalLinkAlt size={16} /> Live Demo
                         </motion.a>
