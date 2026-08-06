@@ -1,228 +1,222 @@
 // Portfolio personal data - easily editable
 export const personalInfo = {
   name: "Syed Abdul Qahar",
-  title: "Frontend Developer & AI Enthusiast",
-  tagline: "Crafting intelligent, beautiful web experiences powered by AI",
+  title: "Computer Science Undergraduate & AI Developer",
+  tagline: "Building Agentic AI, Generative AI & Full-Stack Web Applications",
   description:
-    "I'm a Frontend Developer passionate about building AI-powered applications. Currently pursuing Generative AI & Agentic AI, I combine modern web technologies with intelligent systems to create impactful digital experiences.",
+    "Computer Science undergraduate with hands-on experience in Python, REST APIs, FastAPI, React.js, Next.js, and applied AI including LLMs, Retrieval-Augmented Generation (RAG), NLP/NLI, and LangChain.",
   email: "syedabdulqahar2004@gmail.com",
-  location: "Islamabad, Pakistan",
+  phone: "+92-337-7315705",
+  location: "Rawalpindi/Islamabad, Pakistan",
   resume: "/Syed Abdul Qahar (CV).pdf",
 };
 
 export const aboutData = {
   intro:
-    "I'm a driven developer with a passion for Frontend Development and AI-powered applications. Currently pursuing my degree at CUST while diving deep into Generative AI and Agentic AI.",
+    "I'm a Computer Science undergraduate at CUST with a strong passion for AI/ML, Agentic AI, Generative AI, and Full-Stack Web Development. I build intelligent systems and modern web applications leveraging LLMs, RAG pipelines, and full-stack frameworks.",
   interests: [
-    "Frontend Development",
-    "AI-Powered Applications",
-    "Generative AI",
-    "Agentic AI",
-    "Python Development",
+    "Agentic AI & Generative AI",
+    "RAG Pipelines & LLMs",
+    "Full-Stack Web Development",
+    "FastAPI & React/Next.js",
+    "Database Security (RBAC/ABAC)",
   ],
   highlights: [
-    { label: "3+", description: "Certifications Earned" },
-    { label: "AI", description: "Currently Pursuing" },
+    { label: "3.15", description: "CGPA at CUST" },
     { label: "Dean's", description: "Honor Roll" },
+    { label: "AI/ML", description: "Proton Soft Tech Intern" },
     { label: "2027", description: "Expected Graduation" },
   ],
 };
 
 export const skillsData = {
   frontend: {
-    title: "Frontend",
+    title: "Web Development",
     skills: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "Responsive Design",
+      "HTML5 / CSS3",
+      "JavaScript (ES6+)",
+      "React.js",
+      "Next.js",
       "Tailwind CSS",
+      "Responsive Design",
     ],
   },
   programming: {
-    title: "Programming",
-    skills: ["Python Essentials", "JavaScript", "SQL", "HTML/CSS"],
+    title: "Programming & Fundamentals",
+    skills: [
+      "Python",
+      "Object-Oriented Programming (OOP)",
+      "Data Structures & Algorithms (DSA)",
+      "Error Handling",
+      "SQL",
+    ],
   },
   ai: {
-    title: "AI & Emerging Tech",
+    title: "AI & Generative AI",
     skills: [
-      "Generative AI",
       "Agentic AI",
-      "AI-Powered Apps",
-      "Prompt Engineering",
-      "LLM Integration",
-      "OpenAI API",
+      "LLMs & Fine-Tuning",
+      "LangChain",
+      "RAG Pipelines",
+      "Tokenization",
+      "BERT & DeBERTa",
+      "ChromaDB",
+    ],
+  },
+  backend: {
+    title: "Backend & Security",
+    skills: [
+      "REST APIs",
+      "FastAPI",
+      "Node.js & Express.js",
+      "PostgreSQL",
+      "JWT Authentication & bcrypt",
+      "RBAC / ABAC Control",
     ],
   },
   tools: {
-    title: "Tools & Platforms",
-    skills: ["Git", "GitHub", "VS Code", "Vite", "npm", "Vercel"],
-  },
-  ideModels: {
-    title: "IDE and Models I Use",
-    skills: ["Antigravity", "Cursor", "Darwin", "Github Copilot", "Claude"],
+    title: "Tools & Deployment",
+    skills: ["Git & GitHub", "Vercel & Netlify", "Cursor", "Claude", "ChatGPT"],
   },
 };
 
 export const techStackData = [
   { name: "React", category: "Frontend", icon: "FaReact" },
-  { name: "JavaScript", category: "Language", icon: "SiJavascript" },
+  { name: "Next.js", category: "Framework", icon: "SiVite" },
   { name: "Python", category: "Language", icon: "SiPython" },
+  { name: "FastAPI", category: "Backend", icon: "SiVite" },
+  { name: "JavaScript", category: "Language", icon: "SiJavascript" },
   { name: "Tailwind CSS", category: "Styling", icon: "SiTailwindcss" },
-  { name: "HTML5", category: "Markup", icon: "FaHtml5" },
-  { name: "CSS3", category: "Styling", icon: "FaCss3Alt" },
+  { name: "PostgreSQL", category: "Database", icon: "SiVercel" },
+  { name: "ChromaDB", category: "Vector DB", icon: "TbBrandOpenai" },
   { name: "Git", category: "Tools", icon: "FaGit" },
   { name: "GitHub", category: "Platform", icon: "FaGithub" },
-  { name: "Vite", category: "Bundler", icon: "SiVite" },
-  { name: "OpenAI", category: "AI", icon: "TbBrandOpenai" },
-  { name: "VS Code", category: "IDE", icon: "TbBrandVscode" },
   { name: "Vercel", category: "Deployment", icon: "SiVercel" },
 ];
 
 export const projectsData = [
   {
     id: 1,
-    title: "PAK LAW AI",
+    title: "PakLawAI — Legal Consistency Checker",
     description:
-      "An AI-powered legal assistance platform tailored for Pakistani law.",
+      "An AI-powered legal consistency checker identifying contradictions across Pakistani statutes.",
     longDescription:
-      "A comprehensive full-stack application leveraging Artificial Intelligence to provide legal insights, document analysis, and guidance based on Pakistani law.",
+      "Built an AI-powered legal consistency checker using Next.js, FastAPI, and PostgreSQL. Designed a Retrieval-Augmented Generation (RAG) pipeline with ChromaDB for semantic search over legal text and applied NLP/NLI techniques to detect logical inconsistencies between legal clauses.",
     image: "/projects/portfolio.jpg",
     category: "Full Stack AI Apps",
-    technologies: ["React", "Node.js", "AI/LLMs"],
-    features: ["AI legal assistant", "Document analysis", "Interactive UI"],
+    technologies: ["Next.js", "FastAPI", "PostgreSQL", "ChromaDB", "RAG / NLP"],
+    features: ["AI Legal Checker", "RAG Pipeline with ChromaDB", "NLP/NLI Inconsistency Detection"],
     link: "https://www.github.com/syedabdulqahar",
     demo: "",
   },
   {
     id: 2,
-    title: "Secure Company Portal",
+    title: "RBAC/ABAC Access Control System",
     description:
-      "A secure resource portal for company employees and management.",
+      "A database security system implementing granular Role-Based and Attribute-Based Access Control.",
     longDescription:
-      "A full-stack enterprise solution providing a secure and efficient way for company staff to manage resources, documents, and internal communications.",
+      "Implemented Role-Based and Attribute-Based Access Control (RBAC/ABAC) in PostgreSQL and Python. Designed database-level security policies to enforce granular, attribute-driven permissions.",
     image: "/projects/portfolio.jpg",
-    category: "Full Stack AI Apps",
-    technologies: ["React", "Security", "Authentication"],
-    features: ["Secure login", "Resource management", "Dashboard analytics"],
+    category: "Security & Database",
+    technologies: ["Python", "PostgreSQL", "RBAC/ABAC", "Security Policies"],
+    features: ["Granular RBAC/ABAC", "PostgreSQL Security Policies", "Attribute-driven Permissions"],
     link: "https://github.com/syedabdulqahar/Secure-Company-Resource-Portal",
     demo: "https://www.linkedin.com/feed/update/urn:li:activity:7480929570968498176/",
   },
   {
     id: 3,
-    title: "Restaurant Website",
+    title: "Hungry Pizza",
     description:
-      "An AI-enhanced modern restaurant platform for food ordering and display.",
+      "End-to-end UI/UX & web application for a restaurant ordering platform delivered to a real client.",
     longDescription:
-      "A visually appealing frontend application for a restaurant, featuring an interactive menu, dynamic UI, and AI-driven recommendations.",
+      "Designed and built the end-to-end UI/UX for a freelance restaurant ordering website delivered to a real client, featuring interactive menu, ordering flow, and responsive layout.",
     image: "/projects/portfolio.jpg",
-    category: "AI-Powered Frontend",
-    technologies: ["React", "Tailwind CSS", "AI Integration"],
-    features: ["Interactive menu", "Modern UI/UX", "Responsive design"],
+    category: "Frontend & UI/UX",
+    technologies: ["React", "Tailwind CSS", "UI/UX"],
+    features: ["Interactive menu", "Client project UI/UX", "Responsive design"],
     link: "",
     demo: "https://hungry-pizza-hub.lovable.app",
   },
   {
     id: 4,
-    title: "Weather App",
-    description:
-      "A dynamic weather forecasting application providing real-time data.",
-    longDescription:
-      "A frontend web application that fetches and displays real-time weather data based on user location or searched cities, featuring a clean and intuitive interface.",
-    image: "/projects/portfolio.jpg",
-    category: "AI-Powered Frontend",
-    technologies: ["React", "API Integration", "CSS"],
-    features: [
-      "Real-time weather data",
-      "Location-based forecast",
-      "Search functionality",
-    ],
-    link: "https://github.com/syedabdulqahar/WeatherApp",
-    demo: "https://weather-app-eight-fawn-25.vercel.app",
-  },
-  {
-    id: 5,
     title: "Instagram Clone",
-    description: "A frontend clone of Instagram's web interface.",
+    description:
+      "Pixel-accurate feed, post, and profile interface replicating platform UX patterns using React.js.",
     longDescription:
-      "A faithful recreation of the Instagram UI using React, demonstrating proficiency in complex layout design, component structure, and responsive styling.",
+      "Recreated Instagram's web interface with a pixel-accurate feed, stories, profile pages, and responsive layout using React.js.",
     image: "/projects/portfolio.jpg",
     category: "Frontend",
-    technologies: ["React", "CSS", "UI/UX"],
-    features: ["Feed layout", "Story UI", "Responsive design"],
+    technologies: ["React.js", "CSS3", "UI/UX"],
+    features: ["Pixel-accurate Feed", "Profile & Post UI", "Responsive design"],
     link: "https://github.com/syedabdulqahar/Instagram-react-app",
     demo: "https://instagram-react-app-one.vercel.app",
   },
   {
-    id: 6,
-    title: "YouTube Clone",
-    description: "A frontend replica of the YouTube video streaming platform.",
+    id: 5,
+    title: "WhatsApp Web Clone",
+    description:
+      "Real-time messaging UI/UX clone focusing on layout, responsiveness, and interaction design.",
     longDescription:
-      "A detailed frontend clone of YouTube, showcasing video grids, sidebar navigation, and search bar implementations.",
+      "Recreated real-time messaging UI/UX, focusing on chat layout, responsiveness, and interaction design using React.js and ES6.",
     image: "/projects/portfolio.jpg",
     category: "Frontend",
-    technologies: ["React", "CSS", "Video UI"],
-    features: ["Video grid layout", "Sidebar navigation", "Search UI"],
+    technologies: ["React.js", "ES6+", "CSS3"],
+    features: ["Chat Interface UI", "Responsive Layout", "Real-time interaction design"],
     link: "https://github.com/syedabdulqahar/youtube-clone",
     demo: "",
   },
+];
+
+export const experienceData = [
   {
-    id: 7,
-    title: "Rock Paper Scissors",
-    description: "An interactive web-based Rock Paper Scissors game.",
-    longDescription:
-      "A fun and interactive frontend game built with React, featuring state management for score tracking and game logic.",
-    image: "/projects/rps.png",
-    category: "Games",
-    technologies: ["React", "JavaScript", "CSS"],
-    features: ["Interactive gameplay", "Score tracking", "Animations"],
-    link: "https://github.com/syedabdulqahar/Rock-Paper-Scissor-Game",
-    demo: "https://rock-paper-scissor-game-pi-ten.vercel.app",
+    title: "AI/ML Intern",
+    company: "Proton Soft Tech",
+    period: "6 Weeks, 2025",
+    description:
+      "Gained hands-on exposure to AI/ML workflows, including data preprocessing and model evaluation in a professional environment.",
+    responsibilities: [
+      "Collaborated with technical team on applied machine learning tasks.",
+      "Hands-on data preprocessing and ML model evaluation.",
+      "Strengthened practical Python and ML tooling skills.",
+    ],
   },
   {
-    id: 8,
-    title: "Portfolio Website",
+    title: "Volunteer",
+    company: "Islamabad Traffic Police",
+    period: "5 Weeks",
     description:
-      "A modern, animated personal portfolio built with React, Framer Motion, and Tailwind CSS.",
-    longDescription:
-      "Designed and developed a fully responsive portfolio website featuring smooth animations, glassmorphism design, dark mode aesthetics, and interactive sections.",
-    image: "/projects/portfolio.jpg",
-    category: "Frontend",
-    technologies: ["React", "Tailwind CSS", "Framer Motion"],
-    features: [
-      "Smooth scroll animations",
-      "Responsive glassmorphism design",
-      "Interactive contact form",
+      "Assisted in traffic management and public coordination during a 5-week community volunteering program.",
+    responsibilities: [
+      "Public coordination and traffic flow assistance.",
+      "Community engagement and civic volunteer work.",
     ],
-    link: "https://www.github.com/syedabdulqahar",
-    demo: "#",
   },
 ];
 
-export const experienceData = [];
-
 export const educationData = [
   {
-    degree: "Bachelor's Degree (In Progress)",
-    school: "CUST — Capital University of Science & Technology",
-    year: "Expected 2027",
+    level: "university",
+    degree: "Bachelor of Science in Computer Science (BSCS)",
+    school: "Capital University of Science & Technology (CUST), Islamabad",
+    year: "2023 – 2027",
     description:
-      "Pursuing a degree with focus on computer science and AI technologies. Dean's Honor Roll recipient (6th Semester).",
+      "Pursuing BSCS (CGPA: 3.15) with focus on AI/ML, LLMs, Agentic AI, RAG Pipelines, and Full-Stack Development. Recipient of Dean's Honor Roll Certificate.",
   },
   {
-    degree: "Intermediate (HSSC)",
-    school: "PCQC — Punjab College Quaid Campus",
-    year: "2022",
+    level: "intermediate",
+    degree: "Intermediate in Computer Science (ICS)",
+    school: "Punjab Group of Colleges, Quaid Campus",
+    year: "2020 – 2022",
     description:
-      "Completed intermediate education with a strong foundation in science and mathematics.",
+      "Completed intermediate education in Computer Science (Grade: A) with strong foundation in mathematics, physics, and programming.",
   },
   {
+    level: "matriculation",
     degree: "Matriculation (SSC)",
     school: "IIUI School — Gulzar-e-Quaid Campus",
-    year: "2020",
+    year: "2018 – 2020",
     description:
-      "Completed secondary school education with excellent academic performance.",
+      "Completed secondary school education with excellent academic performance in science subjects.",
   },
 ];
 

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { experienceData } from '../../data/portfolio';
+import { experienceData, personalInfo } from '../../data/portfolio';
 import { staggerContainer, staggerItem } from '../../utils/animations';
 
 const Experience = () => {
@@ -109,7 +109,8 @@ const Experience = () => {
         >
           <p className="text-gray-400 mb-6">Looking for more details about my professional journey?</p>
           <motion.a
-            href="#"
+            href={personalInfo.resume}
+            download="Syed Abdul Qahar (CV).pdf"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-block px-6 py-3 rounded-lg bg-cyan-400/20 border border-cyan-400/50 text-cyan-400 font-semibold hover:bg-cyan-400/30 transition-all"
