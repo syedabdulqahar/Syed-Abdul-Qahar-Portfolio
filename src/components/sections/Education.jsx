@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaGraduationCap, FaSchool } from 'react-icons/fa';
+import { FaGraduationCap, FaSchool, FaTrophy } from 'react-icons/fa';
 import { FaBuildingColumns } from 'react-icons/fa6';
 import { educationData, certificatesData } from '../../data/portfolio';
 import { staggerContainer, staggerItem } from '../../utils/animations';
@@ -12,6 +12,10 @@ const getEducationIconConfig = (level) => {
         icon: <FaSchool className="text-3xl text-emerald-400" />,
         badgeBg: 'bg-emerald-500/10 border-emerald-500/30 group-hover:border-emerald-400',
         label: 'School',
+        gradeColor: 'text-emerald-400',
+        gradeBorder: 'border-emerald-400/40',
+        gradeGlow: 'from-emerald-400/20 to-emerald-500/10',
+        ringColor: '#34d399',
       };
     case 'intermediate':
     case 'highschool':
@@ -20,6 +24,10 @@ const getEducationIconConfig = (level) => {
         icon: <FaBuildingColumns className="text-3xl text-purple-400" />,
         badgeBg: 'bg-purple-500/10 border-purple-500/30 group-hover:border-purple-400',
         label: 'Higher School',
+        gradeColor: 'text-purple-400',
+        gradeBorder: 'border-purple-400/40',
+        gradeGlow: 'from-purple-400/20 to-purple-500/10',
+        ringColor: '#c084fc',
       };
     case 'university':
     case 'degree':
@@ -28,8 +36,89 @@ const getEducationIconConfig = (level) => {
         icon: <FaGraduationCap className="text-3xl text-cyan-400" />,
         badgeBg: 'bg-cyan-500/10 border-cyan-500/30 group-hover:border-cyan-400',
         label: 'University / Degree',
+        gradeColor: 'text-cyan-400',
+        gradeBorder: 'border-cyan-400/40',
+        gradeGlow: 'from-cyan-400/20 to-cyan-500/10',
+        ringColor: '#22d3ee',
       };
   }
+};
+
+/* Animated circular grade badge component */
+const GradeBadge = ({ grade, gradeLabel, gradeMax, iconConfig }) => {
+  const radius = 38;
+  const circumference = 2 * Math.PI * radius;
+
+  // Calculate fill percentage for the ring
+  let fillPercent = 85; // default for letter grades
+  if (gradeMax && !isNaN(parseFloat(grade)) && !isNaN(parseFloat(gradeMax))) {
+    fillPercent = (parseFloat(grade) / parseFloat(gradeMax)) * 100;
+  } else if (grade === 'A+') {
+    fillPercent = 98;
+  } else if (grade === 'A') {
+    fillPercent = 90;
+  } else if (grade === 'B') {
+    fillPercent = 75;
+  }
+
+  const dashOffset = circumference - (fillPercent / 100) * circumference;
+
+  return (
+    <motion.div
+      className="flex flex-col items-center"
+      initial={{ scale: 0.8, opacity: 0 }}
+      whileInView={{ scale: 1, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0.2 }}
+    >
+      <div className="relative w-24 h-24">
+        {/* SVG Ring */}
+        <svg className="w-full h-full -rotate-90" viewBox="0 0 88 88">
+          {/* Background ring */}
+          <circle
+            cx="44"
+            cy="44"
+            r={radius}
+            fill="none"
+            stroke="var(--color-border)"
+            strokeWidth="4"
+          />
+          {/* Animated fill ring */}
+          <motion.circle
+            cx="44"
+            cy="44"
+            r={radius}
+            fill="none"
+            stroke={iconConfig.ringColor}
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeDasharray={circumference}
+            initial={{ strokeDashoffset: circumference }}
+            whileInView={{ strokeDashoffset: dashOffset }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, ease: 'easeOut', delay: 0.4 }}
+            style={{ filter: `drop-shadow(0 0 6px ${iconConfig.ringColor}40)` }}
+          />
+        </svg>
+
+        {/* Center content */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
+          <motion.span
+            className={`text-xl font-black ${iconConfig.gradeColor}`}
+            initial={{ opacity: 0, y: 5 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
+          >
+            {grade}
+          </motion.span>
+          <span className="text-[10px] font-semibold text-[var(--color-text-tertiary)] uppercase tracking-wider">
+            {gradeLabel}
+          </span>
+        </div>
+      </div>
+    </motion.div>
+  );
 };
 
 const Education = () => {
@@ -55,7 +144,7 @@ const Education = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-2xl font-bold text-white mb-8 flex items-center gap-3"
+            className="text-2xl font-bold text-[var(--color-text-primary)] mb-8 flex items-center gap-3"
           >
             <FaGraduationCap className="text-cyan-400" />
             Education History
@@ -81,30 +170,64 @@ const Education = () => {
                   <motion.div
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 1 }}
-                    className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 to-purple-500/10 -z-10"
+                    className={`absolute inset-0 bg-gradient-to-br ${iconConfig.gradeGlow} -z-10`}
                   />
 
                   <div>
-                    {/* Level Icon Badge */}
-                    <div className="flex items-center justify-between mb-4">
-                      <div className={`p-3.5 rounded-xl border backdrop-blur-md transition-all duration-300 ${iconConfig.badgeBg}`}>
-                        {iconConfig.icon}
+                    {/* Top Row: Level Icon + Grade Badge */}
+                    <div className="flex items-start justify-between mb-5">
+                      {/* Left: Icon + Label */}
+                      <div className="flex flex-col gap-2">
+                        <div className={`p-3.5 rounded-xl border backdrop-blur-md transition-all duration-300 ${iconConfig.badgeBg}`}>
+                          {iconConfig.icon}
+                        </div>
+                        <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-[var(--color-glass)] border border-[var(--color-border)] text-[var(--color-text-tertiary)]">
+                          {iconConfig.label}
+                        </span>
                       </div>
-                      <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400">
-                        {iconConfig.label}
-                      </span>
+
+                      {/* Right: Circular Grade Badge */}
+                      {edu.grade && (
+                        <GradeBadge
+                          grade={edu.grade}
+                          gradeLabel={edu.gradeLabel}
+                          gradeMax={edu.gradeMax}
+                          iconConfig={iconConfig}
+                        />
+                      )}
                     </div>
 
                     {/* Content */}
-                    <h4 className="text-white font-bold mb-2 group-hover:text-cyan-400 transition-colors line-clamp-2">
+                    <h4 className="text-[var(--color-text-primary)] font-bold mb-2 group-hover:text-cyan-400 transition-colors line-clamp-2">
                       {edu.degree}
                     </h4>
 
                     <p className="text-cyan-400 text-sm font-semibold mb-2">{edu.school}</p>
 
-                    <p className="text-gray-500 text-sm mb-3 font-mono">{edu.year}</p>
+                    <p className="text-[var(--color-text-tertiary)] text-sm mb-3 font-mono">{edu.year}</p>
 
-                    <p className="text-gray-400 text-sm leading-relaxed">{edu.description}</p>
+                    <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed">{edu.description}</p>
+
+                    {/* Achievement Pills */}
+                    {edu.achievements && edu.achievements.length > 0 && (
+                      <motion.div
+                        className="flex flex-wrap gap-2 mt-4"
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.5 }}
+                      >
+                        {edu.achievements.map((achievement, i) => (
+                          <span
+                            key={i}
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold"
+                          >
+                            <FaTrophy className="text-[10px]" />
+                            {achievement}
+                          </span>
+                        ))}
+                      </motion.div>
+                    )}
                   </div>
                 </motion.div>
               );
@@ -118,7 +241,7 @@ const Education = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-2xl font-bold text-white mb-8 flex items-center gap-3"
+            className="text-2xl font-bold text-[var(--color-text-primary)] mb-8 flex items-center gap-3"
           >
             <span className="text-3xl">📜</span>
             Certifications
@@ -154,18 +277,18 @@ const Education = () => {
                 </div>
 
                 {/* Content */}
-                <h4 className="text-white font-bold mb-2 group-hover:text-cyan-400 transition-colors pr-8">
+                <h4 className="text-[var(--color-text-primary)] font-bold mb-2 group-hover:text-cyan-400 transition-colors pr-8">
                   {cert.title}
                 </h4>
 
                 <p className="text-cyan-400 text-sm font-semibold mb-2">{cert.issuer}</p>
 
-                <p className="text-gray-500 text-sm mb-4">{cert.date}</p>
+                <p className="text-[var(--color-text-tertiary)] text-sm mb-4">{cert.date}</p>
 
                 {/* Credential ID */}
-                <div className="pt-4 border-t border-white/10">
-                  <p className="text-xs text-gray-500 mb-3">Credential ID</p>
-                  <code className="text-xs text-cyan-400 font-mono bg-white/5 px-2 py-1 rounded block break-all">
+                <div className="pt-4 border-t border-[var(--color-border)]">
+                  <p className="text-xs text-[var(--color-text-tertiary)] mb-3">Credential ID</p>
+                  <code className="text-xs text-cyan-400 font-mono bg-[var(--color-glass)] px-2 py-1 rounded block break-all">
                     {cert.credentialId}
                   </code>
                 </div>
@@ -174,7 +297,7 @@ const Education = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 5 }}
                   whileHover={{ opacity: 1, y: 0 }}
-                  className="mt-4 pt-4 border-t border-white/10 text-cyan-400 text-sm font-semibold flex items-center gap-2 hover:gap-3 transition-all"
+                  className="mt-4 pt-4 border-t border-[var(--color-border)] text-cyan-400 text-sm font-semibold flex items-center gap-2 hover:gap-3 transition-all"
                 >
                   View Certificate →
                 </motion.div>

@@ -89,14 +89,14 @@ const Hero = () => {
             variants={itemVariants}
             className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 leading-tight"
           >
-            <span className="text-white">Hi, I'm </span>
+            <span className="text-[var(--color-text-primary)]">Hi, I'm </span>
             <span className="gradient-text">{personalInfo.name}</span>
           </motion.h1>
 
           {/* Title with Typewriter */}
           <motion.div variants={itemVariants} className="mb-6">
-            <div className="text-2xl md:text-3xl text-gray-300 font-semibold">
-              <span className="text-gray-400">A </span>
+            <div className="text-2xl md:text-3xl text-[var(--color-text-secondary)] font-semibold">
+              <span className="text-[var(--color-text-secondary)]">A </span>
               <Typewriter
                 words={[
                   "Frontend Developer",
@@ -114,7 +114,7 @@ const Hero = () => {
           {/* Description */}
           <motion.p
             variants={itemVariants}
-            className="text-gray-400 text-lg md:text-xl max-w-2xl mb-8 leading-relaxed"
+            className="text-[var(--color-text-secondary)] text-lg md:text-xl max-w-2xl mb-8 leading-relaxed"
           >
             {personalInfo.description}
           </motion.p>
@@ -151,7 +151,7 @@ const Hero = () => {
           {/* Stats */}
           <motion.div
             variants={itemVariants}
-            className="grid grid-cols-3 gap-8 pt-8 border-t border-white/10"
+            className="grid grid-cols-3 gap-8 pt-8 border-t border-[var(--color-border)]"
           >
             {[
               { number: "3+", label: "Certifications" },
@@ -166,7 +166,7 @@ const Hero = () => {
                 <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
                   {stat.number}
                 </div>
-                <p className="text-sm text-gray-500">{stat.label}</p>
+                <p className="text-sm text-[var(--color-text-tertiary)]">{stat.label}</p>
               </motion.div>
             ))}
           </motion.div>

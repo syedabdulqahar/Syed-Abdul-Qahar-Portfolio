@@ -65,7 +65,7 @@ const Contact = () => {
             Get In Touch
           </span>
           <h2 className="mt-4">Let's Work Together</h2>
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">
+          <p className="text-[var(--color-text-secondary)] mt-4 max-w-2xl mx-auto text-lg">
             Have a project in mind or want to collaborate? I'd love to hear from you.
             Send me a message and I'll get back to you as soon as possible.
           </p>
@@ -89,8 +89,8 @@ const Contact = () => {
                 <FaEnvelope className="text-cyan-400 text-xl" />
               </div>
               <div>
-                <h4 className="text-white font-semibold mb-1">Email</h4>
-                <p className="text-gray-400 group-hover:text-cyan-400 transition-colors">
+                <h4 className="text-[var(--color-text-primary)] font-semibold mb-1">Email</h4>
+                <p className="text-[var(--color-text-secondary)] group-hover:text-cyan-400 transition-colors">
                   {personalInfo.email}
                 </p>
               </div>
@@ -107,8 +107,8 @@ const Contact = () => {
                 <FaMapMarkerAlt className="text-cyan-400 text-xl" />
               </div>
               <div>
-                <h4 className="text-white font-semibold mb-1">Location</h4>
-                <p className="text-gray-400">{personalInfo.location}</p>
+                <h4 className="text-[var(--color-text-primary)] font-semibold mb-1">Location</h4>
+                <p className="text-[var(--color-text-secondary)]">{personalInfo.location}</p>
               </div>
             </motion.div>
 
@@ -118,13 +118,13 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="mt-12 pt-12 border-t border-white/10"
+              className="mt-12 pt-12 border-t border-[var(--color-border)]"
             >
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
                 <span className="text-green-400 text-sm font-semibold">Available for freelance</span>
               </div>
-              <p className="text-gray-400 text-sm">
+              <p className="text-[var(--color-text-secondary)] text-sm">
                 I'm currently open to new projects and opportunities. Let's connect!
               </p>
             </motion.div>
@@ -140,7 +140,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               {/* Name Field */}
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-[var(--color-text-primary)] mb-2">
                   Your Name
                 </label>
                 <input
@@ -148,7 +148,7 @@ const Contact = () => {
                   type="text"
                   placeholder="John Doe"
                   {...register('name')}
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
+                  className="w-full px-4 py-3 rounded-lg bg-[var(--color-glass)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-tertiary)] focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
                 />
                 {errors.name && (
                   <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>
@@ -157,7 +157,7 @@ const Contact = () => {
 
               {/* Email Field */}
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-[var(--color-text-primary)] mb-2">
                   Email Address
                 </label>
                 <input
@@ -165,7 +165,7 @@ const Contact = () => {
                   type="email"
                   placeholder="you@example.com"
                   {...register('email')}
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
+                  className="w-full px-4 py-3 rounded-lg bg-[var(--color-glass)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-tertiary)] focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
                 />
                 {errors.email && (
                   <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>
@@ -174,7 +174,7 @@ const Contact = () => {
 
               {/* Subject Field */}
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-white mb-2">
+                <label htmlFor="subject" className="block text-sm font-medium text-[var(--color-text-primary)] mb-2">
                   Subject
                 </label>
                 <input
@@ -182,7 +182,7 @@ const Contact = () => {
                   type="text"
                   placeholder="Project inquiry"
                   {...register('subject')}
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
+                  className="w-full px-4 py-3 rounded-lg bg-[var(--color-glass)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-tertiary)] focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
                 />
                 {errors.subject && (
                   <p className="text-red-400 text-sm mt-1">{errors.subject.message}</p>
@@ -191,7 +191,7 @@ const Contact = () => {
 
               {/* Message Field */}
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-[var(--color-text-primary)] mb-2">
                   Message
                 </label>
                 <textarea
@@ -199,7 +199,7 @@ const Contact = () => {
                   rows={5}
                   placeholder="Tell me about your project..."
                   {...register('message')}
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-lg bg-[var(--color-glass)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-tertiary)] focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all resize-none"
                 />
                 {errors.message && (
                   <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>
@@ -237,7 +237,7 @@ const Contact = () => {
                 whileTap={{ scale: 0.98 }}
                 className={`w-full px-6 py-3 rounded-lg font-semibold transition-all ${
                   isLoading
-                    ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
+                    ? 'bg-gray-600 text-[var(--color-text-secondary)] cursor-not-allowed'
                     : 'btn-primary justify-center'
                 }`}
               >

@@ -102,7 +102,7 @@ export const projectsData = [
       "An AI-powered legal consistency checker identifying contradictions across Pakistani statutes.",
     longDescription:
       "Built an AI-powered legal consistency checker using Next.js, FastAPI, and PostgreSQL. Designed a Retrieval-Augmented Generation (RAG) pipeline with ChromaDB for semantic search over legal text and applied NLP/NLI techniques to detect logical inconsistencies between legal clauses.",
-    image: "/projects/portfolio.jpg",
+    image: "/projects/paklawai.jpg",
     category: "Full Stack AI Apps",
     technologies: ["Next.js", "FastAPI", "PostgreSQL", "ChromaDB", "RAG / NLP"],
     features: ["AI Legal Checker", "RAG Pipeline with ChromaDB", "NLP/NLI Inconsistency Detection"],
@@ -116,7 +116,7 @@ export const projectsData = [
       "A database security system implementing granular Role-Based and Attribute-Based Access Control.",
     longDescription:
       "Implemented Role-Based and Attribute-Based Access Control (RBAC/ABAC) in PostgreSQL and Python. Designed database-level security policies to enforce granular, attribute-driven permissions.",
-    image: "/projects/portfolio.jpg",
+    image: "/projects/rbac-abac.jpg",
     category: "Security & Database",
     technologies: ["Python", "PostgreSQL", "RBAC/ABAC", "Security Policies"],
     features: ["Granular RBAC/ABAC", "PostgreSQL Security Policies", "Attribute-driven Permissions"],
@@ -130,7 +130,7 @@ export const projectsData = [
       "End-to-end UI/UX & web application for a restaurant ordering platform delivered to a real client.",
     longDescription:
       "Designed and built the end-to-end UI/UX for a freelance restaurant ordering website delivered to a real client, featuring interactive menu, ordering flow, and responsive layout.",
-    image: "/projects/portfolio.jpg",
+    image: "/projects/hungry-pizza.jpg",
     category: "Frontend & UI/UX",
     technologies: ["React", "Tailwind CSS", "UI/UX"],
     features: ["Interactive menu", "Client project UI/UX", "Responsive design"],
@@ -144,7 +144,7 @@ export const projectsData = [
       "Pixel-accurate feed, post, and profile interface replicating platform UX patterns using React.js.",
     longDescription:
       "Recreated Instagram's web interface with a pixel-accurate feed, stories, profile pages, and responsive layout using React.js.",
-    image: "/projects/portfolio.jpg",
+    image: "/projects/instagram-clone.jpg",
     category: "Frontend",
     technologies: ["React.js", "CSS3", "UI/UX"],
     features: ["Pixel-accurate Feed", "Profile & Post UI", "Responsive design"],
@@ -158,7 +158,7 @@ export const projectsData = [
       "Real-time messaging UI/UX clone focusing on layout, responsiveness, and interaction design.",
     longDescription:
       "Recreated real-time messaging UI/UX, focusing on chat layout, responsiveness, and interaction design using React.js and ES6.",
-    image: "/projects/portfolio.jpg",
+    image: "/projects/whatsapp-clone.jpg",
     category: "Frontend",
     technologies: ["React.js", "ES6+", "CSS3"],
     features: ["Chat Interface UI", "Responsive Layout", "Real-time interaction design"],
@@ -199,22 +199,34 @@ export const educationData = [
     degree: "Bachelor of Science in Computer Science (BSCS)",
     school: "Capital University of Science & Technology (CUST), Islamabad",
     year: "2023 – 2027",
+    grade: "3.15",
+    gradeLabel: "CGPA",
+    gradeMax: "4.0",
+    achievements: ["Dean's Honor Roll — 6th Semester"],
     description:
-      "Pursuing BSCS (CGPA: 3.15) with focus on AI/ML, LLMs, Agentic AI, RAG Pipelines, and Full-Stack Development. Recipient of Dean's Honor Roll Certificate.",
+      "Pursuing BSCS with focus on AI/ML, LLMs, Agentic AI, RAG Pipelines, and Full-Stack Development.",
   },
   {
     level: "intermediate",
     degree: "Intermediate in Computer Science (ICS)",
     school: "Punjab Group of Colleges, Quaid Campus",
     year: "2020 – 2022",
+    grade: "A",
+    gradeLabel: "Grade",
+    gradeMax: "",
+    achievements: [],
     description:
-      "Completed intermediate education in Computer Science (Grade: A) with strong foundation in mathematics, physics, and programming.",
+      "Completed intermediate education in Computer Science with strong foundation in mathematics, physics, and programming.",
   },
   {
     level: "matriculation",
     degree: "Matriculation (SSC)",
     school: "IIUI School — Gulzar-e-Quaid Campus",
     year: "2018 – 2020",
+    grade: "A+",
+    gradeLabel: "Grade",
+    gradeMax: "",
+    achievements: [],
     description:
       "Completed secondary school education with excellent academic performance in science subjects.",
   },

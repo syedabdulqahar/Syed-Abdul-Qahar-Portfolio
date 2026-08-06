@@ -72,7 +72,7 @@ const TechStack = () => {
                   boxShadow: '0 0 30px rgba(6, 182, 212, 0.6)',
                   borderColor: 'rgba(6, 182, 212, 0.8)',
                 }}
-                className="group p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 cursor-default"
+                className="group p-6 rounded-xl bg-[var(--color-glass)] border border-[var(--color-border)] hover:bg-[var(--color-glass)] transition-all duration-300 cursor-default"
               >
                 {/* Tech Icon */}
                 <div className="text-4xl mb-4 opacity-80 group-hover:opacity-100 transition-opacity">
@@ -84,12 +84,12 @@ const TechStack = () => {
                 </div>
 
                 {/* Tech Name */}
-                <h4 className="text-white font-semibold mb-1 group-hover:text-cyan-400 transition-colors">
+                <h4 className="text-[var(--color-text-primary)] font-semibold mb-1 group-hover:text-cyan-400 transition-colors">
                   {tech.name}
                 </h4>
 
                 {/* Category */}
-                <p className="text-xs text-gray-500 group-hover:text-cyan-400/60 transition-colors">
+                <p className="text-xs text-[var(--color-text-tertiary)] group-hover:text-cyan-400/60 transition-colors">
                   {tech.category}
                 </p>
 
@@ -110,7 +110,7 @@ const TechStack = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="text-center text-gray-400 mt-12 text-sm max-w-2xl mx-auto"
+          className="text-center text-[var(--color-text-secondary)] mt-12 text-sm max-w-2xl mx-auto"
         >
           I'm constantly learning and integrating new technologies. This represents my core
           technical toolkit and the technologies I use most frequently in my projects.

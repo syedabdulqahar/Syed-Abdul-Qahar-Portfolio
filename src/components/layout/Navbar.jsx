@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { navLinks, personalInfo } from "../../data/portfolio";
 import { useActiveSection, useIsMobile } from "../../hooks/useCustom";
+import ThemeToggle from "../ui/ThemeToggle";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +35,7 @@ const Navbar = () => {
       animate={{ opacity: 1, y: 0 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-dark-900/80 backdrop-blur-lg border-b border-white/10"
+          ? "bg-[var(--color-bg-primary)]/80 backdrop-blur-lg border-b border-[var(--color-border)]"
           : "bg-transparent"
       }`}
     >
@@ -64,7 +65,7 @@ const Navbar = () => {
                   className={`transition-colors ${
                     activeSection === link.href.replace("#", "")
                       ? "text-cyan-400"
-                      : "text-gray-400"
+                      : "text-[var(--color-text-secondary)]"
                   }`}
                 >
                   {link.label}
@@ -78,18 +79,26 @@ const Navbar = () => {
                 )}
               </motion.button>
             ))}
+
+            {/* Theme Toggle — Desktop */}
+            <div className="ml-3">
+              <ThemeToggle />
+            </div>
           </div>
         )}
 
-        {/* Mobile Menu Button */}
+        {/* Mobile: Theme Toggle + Menu Button */}
         {isMobile && (
-          <motion.button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-gray-300 hover:text-cyan-400 transition-colors"
-            whileTap={{ scale: 0.95 }}
-          >
-            {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-          </motion.button>
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <motion.button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-[var(--color-text-secondary)] hover:text-cyan-400 transition-colors"
+              whileTap={{ scale: 0.95 }}
+            >
+              {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            </motion.button>
+          </div>
         )}
       </div>
 
@@ -101,7 +110,7 @@ const Navbar = () => {
           height: isOpen ? "auto" : 0,
         }}
         transition={{ duration: 0.3 }}
-        className={`overflow-hidden bg-dark-900/95 backdrop-blur-lg border-b border-white/10 ${
+        className={`overflow-hidden bg-[var(--color-bg-primary)]/95 backdrop-blur-lg border-b border-[var(--color-border)] ${
           isOpen ? "block" : "hidden"
         }`}
       >
@@ -113,7 +122,7 @@ const Navbar = () => {
               className={`text-left px-4 py-2 rounded-lg transition-colors ${
                 activeSection === link.href.replace("#", "")
                   ? "bg-cyan-400/20 text-cyan-400"
-                  : "text-gray-400 hover:bg-white/5"
+                  : "text-[var(--color-text-secondary)] hover:bg-[var(--color-glass)]"
               }`}
               whileHover={{ x: 4 }}
             >

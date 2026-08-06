@@ -45,7 +45,7 @@ const Projects = () => {
               className={`px-6 py-2 rounded-lg font-medium transition-all ${
                 selectedCategory === category
                   ? 'bg-cyan-400/30 text-cyan-400 border border-cyan-400 shadow-neon'
-                  : 'bg-white/5 text-gray-400 border border-white/10 hover:border-cyan-400/50'
+                  : 'bg-[var(--color-glass)] text-[var(--color-text-secondary)] border border-[var(--color-border)] hover:border-cyan-400/50'
               }`}
             >
               {category}
@@ -75,7 +75,7 @@ const Projects = () => {
                   className="card-glass card-hover overflow-hidden h-full flex flex-col"
                 >
                   {/* Project Image */}
-                  <div className="relative h-48 bg-dark-800 overflow-hidden mb-6">
+                  <div className="relative h-48 bg-[var(--color-bg-tertiary)] overflow-hidden mb-6">
                     {project.image ? (
                       <img 
                         src={project.image} 
@@ -88,7 +88,7 @@ const Projects = () => {
                       </div>
                     )}
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent"
+                      className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg-primary)] via-transparent to-transparent"
                       initial={{ opacity: 0 }}
                       whileHover={{ opacity: 1 }}
                       transition={{ duration: 0.3 }}
@@ -103,12 +103,12 @@ const Projects = () => {
                     </span>
 
                     {/* Title */}
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                    <h3 className="text-lg font-bold text-[var(--color-text-primary)] mb-2 group-hover:text-cyan-400 transition-colors">
                       {project.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-sm text-gray-400 mb-4 flex-1">
+                    <p className="text-sm text-[var(--color-text-secondary)] mb-4 flex-1">
                       {project.description}
                     </p>
 
@@ -117,13 +117,13 @@ const Projects = () => {
                       {project.technologies.slice(0, 3).map((tech, i) => (
                         <span
                           key={i}
-                          className="px-2 py-1 rounded text-xs bg-white/5 text-gray-400 border border-white/10"
+                          className="px-2 py-1 rounded text-xs bg-[var(--color-glass)] text-[var(--color-text-secondary)] border border-[var(--color-border)]"
                         >
                           {tech}
                         </span>
                       ))}
                       {project.technologies.length > 3 && (
-                        <span className="px-2 py-1 text-xs text-gray-500">
+                        <span className="px-2 py-1 text-xs text-[var(--color-text-tertiary)]">
                           +{project.technologies.length - 3}
                         </span>
                       )}
@@ -138,7 +138,7 @@ const Projects = () => {
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-cyan-400/20 text-gray-400 hover:text-cyan-400 transition-all font-medium text-sm"
+                          className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-[var(--color-glass)] hover:bg-cyan-400/20 text-[var(--color-text-secondary)] hover:text-cyan-400 transition-all font-medium text-sm"
                         >
                           <FaGithub size={16} /> Code
                         </motion.a>

@@ -44,7 +44,7 @@ const Experience = () => {
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="hidden md:block absolute left-1/2 top-6 w-4 h-4 rounded-full bg-cyan-400 border-4 border-dark-900 transform -translate-x-1/2"
+                className="hidden md:block absolute left-1/2 top-6 w-4 h-4 rounded-full bg-cyan-400 border-4 border-[var(--color-bg-primary)] transform -translate-x-1/2"
               />
 
               {/* Content Card */}
@@ -62,19 +62,19 @@ const Experience = () => {
 
                 {/* Header */}
                 <div className="md:hidden mb-4">
-                  <h3 className="text-lg font-bold text-white">{experience.title}</h3>
+                  <h3 className="text-lg font-bold text-[var(--color-text-primary)]">{experience.title}</h3>
                   <p className="text-cyan-400 font-semibold text-sm mt-1">{experience.company}</p>
                 </div>
 
                 {/* Desktop Header */}
                 <div className="hidden md:block mb-4">
                   <p className="text-cyan-400 font-semibold text-sm mb-1">{experience.company}</p>
-                  <h3 className="text-xl font-bold text-white mb-1">{experience.title}</h3>
-                  <p className="text-xs text-gray-500">{experience.period}</p>
+                  <h3 className="text-xl font-bold text-[var(--color-text-primary)] mb-1">{experience.title}</h3>
+                  <p className="text-xs text-[var(--color-text-tertiary)]">{experience.period}</p>
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+                <p className="text-[var(--color-text-secondary)] text-sm mb-4 leading-relaxed">
                   {experience.description}
                 </p>
 
@@ -87,7 +87,7 @@ const Experience = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.05 }}
-                      className="flex items-center gap-2 text-sm text-gray-400"
+                      className="flex items-center gap-2 text-sm text-[var(--color-text-secondary)]"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0"></span>
                       {resp}
@@ -107,7 +107,7 @@ const Experience = () => {
           transition={{ delay: 0.3 }}
           className="text-center mt-16"
         >
-          <p className="text-gray-400 mb-6">Looking for more details about my professional journey?</p>
+          <p className="text-[var(--color-text-secondary)] mb-6">Looking for more details about my professional journey?</p>
           <motion.a
             href={personalInfo.resume}
             download="Syed Abdul Qahar (CV).pdf"

@@ -42,8 +42,8 @@ const About = () => {
 
                   {/* Name / Role caption */}
                   <div className="mt-4 text-center">
-                    <div className="text-white font-semibold text-lg">Syed Abdul Qahar</div>
-                    <div className="text-sm text-gray-400">Frontend Developer & AI Enthusiast</div>
+                    <div className="text-[var(--color-text-primary)] font-semibold text-lg">Syed Abdul Qahar</div>
+                    <div className="text-sm text-[var(--color-text-secondary)]">Frontend Developer & AI Enthusiast</div>
                   </div>
                 </div>
               </div>
@@ -72,14 +72,14 @@ const About = () => {
           >
             <motion.p
               variants={staggerItem}
-              className="text-gray-400 text-lg leading-relaxed"
+              className="text-[var(--color-text-secondary)] text-lg leading-relaxed"
             >
               {aboutData.intro}
             </motion.p>
 
             {/* Interests */}
             <motion.div variants={staggerItem}>
-              <h4 className="text-white font-semibold mb-4">My Interests</h4>
+              <h4 className="text-[var(--color-text-primary)] font-semibold mb-4">My Interests</h4>
               <div className="flex flex-wrap gap-2">
                 {aboutData.interests.map((interest, index) => (
                   <motion.span
@@ -97,17 +97,17 @@ const About = () => {
             </motion.div>
 
             {/* Highlights Stats */}
-            <motion.div variants={staggerItem} className="grid grid-cols-2 gap-4 pt-6 border-t border-white/10">
+            <motion.div variants={staggerItem} className="grid grid-cols-2 gap-4 pt-6 border-t border-[var(--color-border)]">
               {aboutData.highlights.map((highlight, index) => (
                 <motion.div
                   key={index}
                   whileHover={{ y: -5 }}
-                  className="p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
+                  className="p-4 rounded-xl bg-[var(--color-glass)] hover:bg-[var(--color-glass)] transition-colors"
                 >
                   <div className="text-2xl font-bold text-cyan-400 mb-1">
                     {highlight.label}
                   </div>
-                  <p className="text-sm text-gray-500">{highlight.description}</p>
+                  <p className="text-sm text-[var(--color-text-tertiary)]">{highlight.description}</p>
                 </motion.div>
               ))}
             </motion.div>

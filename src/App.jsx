@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Hero from './components/sections/Hero';
@@ -17,23 +18,25 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-dark-900 text-gray-300 overflow-x-hidden">
-      <Navbar />
+    <ThemeProvider>
+      <div className="bg-theme-primary text-theme-secondary overflow-x-hidden transition-colors duration-300">
+        <Navbar />
 
-      {/* Main Content */}
-      <main className="pt-16 md:pt-20">
-        <Hero />
-        <About />
-        <Skills />
-        <TechStack />
-        <Projects />
+        {/* Main Content */}
+        <main className="pt-16 md:pt-20">
+          <Hero />
+          <About />
+          <Skills />
+          <TechStack />
+          <Projects />
 
-        <Education />
-        <Contact />
-      </main>
+          <Education />
+          <Contact />
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 

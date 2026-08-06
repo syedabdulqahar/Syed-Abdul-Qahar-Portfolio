@@ -37,7 +37,7 @@ const Skills = () => {
               className="card-glass card-hover group"
             >
               {/* Category Title */}
-              <h3 className="text-white font-bold mb-6 group-hover:text-cyan-400 transition-colors">
+              <h3 className="text-[var(--color-text-primary)] font-bold mb-6 group-hover:text-cyan-400 transition-colors">
                 {category.title}
               </h3>
 
@@ -59,12 +59,12 @@ const Skills = () => {
               </div>
 
               {/* Skill Level Indicator */}
-              <div className="mt-6 pt-6 border-t border-white/10">
+              <div className="mt-6 pt-6 border-t border-[var(--color-border)]">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs text-gray-500">Proficiency</span>
+                  <span className="text-xs text-[var(--color-text-tertiary)]">Proficiency</span>
                   <span className="text-xs text-cyan-400 font-semibold">Expert</span>
                 </div>
-                <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+                <div className="w-full h-1 bg-[var(--color-glass)] rounded-full overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: '100%' }}
